@@ -36,13 +36,13 @@ self.addEventListener('install', function (event) {
 });
 
 // Remove old cache if any.
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', function (event) {
   console.log('service-worker:activate');
 
-  event.waitUntil((async () => {
+  event.waitUntil((async function () {
     const cacheNames = await caches.keys();
 
-    await Promise.all(cacheNames.map(async (cacheName) => {
+    await Promise.all(cacheNames.map(async function (cacheName) {
       if (self.cacheName !== cacheName) {
         console.log(`service:worker:activate [${cacheName}] clean item from cache`);
         await caches.delete(cacheName);
