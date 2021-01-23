@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Splash Screen</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Home Page</title>
+
   <link async rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,600,300italic,600italic" rel="stylesheet" type="text/css">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/icons/apple-launch-1125x2436.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/icons/apple-launch-1242x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/icons/apple-launch-750x1334.png">
+  <link rel="apple-touch-icon" href="/icons/launcher-icon.png">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="/dependencies.js"></script>
 </head>
+
+<!-- Ignore everything above this line -->
+
 <body>
-  Loading...
+  <div id="home" class="container">
+    <header>
+      <span>Home</span>
+      <a href="/map.html">Map</a>
+    </header>
+    <main class="fill column">
+      <div class="fill border row center-horizontal center-vertical">
+        <div class="fill center-vertical center-horizontal">An item</div>
+        <div class="fill">An item</div>
+      </div>
+      <div class="fill border center-horizontal center-vertical">
+        <div>An item</div>
+      </div>
+      <div class="fill border center-horizontal center-vertical">
+        <div><button onclick="incrementCount();">Press me!</button><span id="counter"></span></div>
+      </div>
+    </main>
+    <footer>The Footer</footer>
+  </div>
+<script src="/index.js"></script>
 </body>
+
+<!-- Ignore everything below this line -->
+
 </html>

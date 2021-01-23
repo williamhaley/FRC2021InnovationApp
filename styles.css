@@ -1,12 +1,7 @@
 html,
 body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
@@ -14,6 +9,22 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/*
+Solving overscroll issues today is unreliable. Apple would rather have you
+feel that PWAs are bad and keep within their App Store ecosystem. Don't try to
+solve this difficult problem. Rather, allow overscroll, and use consistent
+background colors so it's not as noticeable.
+*/
+body,
+header,
+footer {
+  background-color: var(--primary-color);
 }
 
 .container {
@@ -25,6 +36,11 @@ body {
     "header"
     "main"
     "footer";
+}
+
+header,
+footer {
+  padding: 0.5em;
 }
 
 header {
@@ -65,14 +81,12 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: var(--primary-color);
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-  padding: 0.5em 1em;
-  font-weight: 800;
-  font-size: 1.2em;
-  cursor: pointer;
+@media(hover: hover) and (pointer: fine) {
+  button:hover {
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+  }
 }
 
 .fill {
@@ -103,4 +117,8 @@ button:hover {
 
 .border {
   border: 1px solid #000;
+}
+
+.hidden {
+  display: none;
 }
